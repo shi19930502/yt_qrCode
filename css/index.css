@@ -1,0 +1,874 @@
+html, body {
+	position: relative;
+	height: 100%;
+}
+body {
+	background: #eee;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.ishow{
+	/*display: none;*/
+}
+.swiper-slide {
+	text-align: center;
+	background: #fff;
+    /* Center slide text vertically */
+	/*display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;*/
+}
+.first{
+	width: 100%;
+	background: url('../img/map.png') no-repeat;
+	background-size:cover;
+	/*background-size: contain;*/
+	/*transition: all 2s linear;*/
+	background-origin:border-box;
+	animation: firstBackground 2s  ;/*infinite linear*/
+}
+.thr{
+	width: 100%;
+	background: url('../img/one_bg_weixing.png') no-repeat;
+	background-size:cover;
+	/*background-size: contain;*/
+	/*transition: all 2s linear;*/
+	background-origin:border-box;
+}
+@keyframes firstBackground {
+	from{ 
+		background: white;
+	}to{
+		background: white;
+	}
+}
+/*.loading{
+	width: 100%;
+	height: 100%;
+	background: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+}
+.loading p{
+	width: 100%;
+	background: white;
+	font-size: .3rem;
+	position: absolute;
+	width: 2rem !important;
+	height: .3rem !important;
+	line-height: .3rem;
+	margin: auto;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index: 99999;
+	animation: firstLoading 2s  ;/*infinite linear*/
+	/*display: none;*/
+	color: transparent;
+}*/
+@keyframes firstLoading {
+	from{ 
+		color: black;
+	}to{
+		color: black;
+	}
+}
+.upload{
+	width: 100%;
+	/*height: 100%;*/
+	overflow: hidden;
+	z-index: 998;
+}
+.html-header{
+	width: 100%;
+	margin: .4rem 0 0 0;
+	overflow: hidden;
+}
+.header-top{
+	color: white;
+	font-size: .32rem;
+	padding: 0 0 .17rem .25rem;
+	line-height: .36rem;
+	height: .36rem;
+	text-align: left;
+}
+.heaer-down{
+	width: 2.38rem;
+	height: .13rem;
+	background: url('../img/one_bg_name.png') no-repeat;
+	background-size: contain;
+	position: relative;
+	z-index: 99;
+	opacity: 1;
+}
+.banckground_blue{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(3,141,246,.8);
+}
+.dy_img{
+	width: .42rem;
+	height: .42rem;
+	background: url('../img/one_icon_dingwei.png') no-repeat;
+	background-size: contain;
+	/****如果写了infinite就不能有!important,不然不会执行alternate*/
+	animation:moveDy_img 7s  ;
+	animation-direction:alternate ;/*当有infinite时,来回的重复*/
+	/*animation-name: moveDy_img !important;*/
+	animation-delay:1s;/*-2s立马执行，跳过2秒。2s延迟2秒*/
+	/*animation-delay*/
+	opacity:1;/*透明度*/
+	position: absolute;
+	top: .4rem;
+	right: 1.8rem;
+	z-index: 999;
+	/*第一下是否显示最初的位置*/
+	/*animation-fill-mode: both;*/
+}
+
+
+@keyframes moveDy_img{
+	0%{
+		opacity: 0;
+	}
+	30%{
+		opacity: 0;
+		position: absolute;
+		left: 0rem;
+		top: 6.7rem;
+	}
+	50%{
+		opacity: 1;
+		position: absolute;
+		width: 1.2rem;
+		height: 1.2rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	60%{
+		opacity: 1;
+		position: absolute;
+		width: .8rem;
+		height: .8rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	70%{
+		opacity: 1;
+		position: absolute;
+		width: .8rem;
+		top: 5.65rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	80%{
+		opacity: 1;
+		left: 3.75rem;
+		position: absolute;
+		top: 5.65rem;
+		width: .8rem;
+		height: .8rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	95%{
+		opacity: 1;
+		position: absolute;
+		width: .8rem;
+		height: .8rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	
+	96%{
+		opacity: 0;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	99%{
+		opacity: 0;
+		position: absolute;
+		top: .4rem;
+		right: 1.8rem;
+	}
+	100%{
+		opacity: 1;
+		position: absolute;
+		top: .4rem;
+		right: 1.8rem;
+	}
+}
+.dy_name_size{
+	font-size: 0rem;
+}
+.dy_name{
+	font-size: .32rem;
+	position: absolute;
+	top: .44rem;
+	right: .35rem;
+	color: white;
+	animation:moveDy_name 7s;
+	/*让动画反起运行*/
+	/*animation-direction:reverse;*/
+	opacity:1;
+	animation-delay:1s;
+	z-index: 999;
+}
+
+
+@keyframes moveDy_name{
+	0%{
+		opacity: 0;
+	}
+	30%{
+		opacity: 0;
+		position: absolute;
+		right: 0rem;
+		top: 6.95rem;
+	}
+	50%{
+		opacity: 0;
+		position: absolute;
+		right: 0rem;
+		top: 6.95rem;
+	}
+	
+	65%{
+		opacity: 0.5;
+		position: absolute;
+		right: 0.8rem;
+		top: 6.95rem;
+		font-size: .3rem;
+	}
+	70%{
+		opacity: 1;
+		position: absolute;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .5rem;
+	}
+	80%{
+		opacity: 1;
+		position: absolute;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	95%{
+		opacity: 1;
+		position: absolute;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	96%{
+		position: absolute;
+		opacity: 0;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	97%{
+		position: absolute;
+		opacity: 0;
+		top: .44rem;
+		right: 0rem;
+	}
+	100%{
+		position: absolute;
+		opacity: 0;
+		top: .44rem;
+		right: .35rem;
+		
+	}
+}
+.animateTimeImg{
+	animation:moveTwoImg 5s;
+}
+@keyframes moveTwoImg{
+	0%{
+		opacity: 0;
+		position: absolute;
+		left: 1.5rem;
+		top: 6rem;
+	}
+	25%{
+		opacity: 1;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+		width: 1.2rem;
+		height: 1.2rem;
+	}
+	50%{
+		opacity: 1;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+		width: .8rem;
+		height: .8rem;
+	}
+	60%{
+		opacity: 1;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	70%{
+		opacity: 1;
+		position: absolute;
+		width: .8rem;
+		height: .8rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	80%{
+		opacity: 1;
+		position: absolute;
+		width: .8rem;
+		height: .8rem;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	95%{
+		opacity: 1;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+		width: .8rem;
+		height: .8rem;
+	}
+	96%{
+		opacity: 0;
+		position: absolute;
+		left: 5.75rem;
+		top: 6rem;
+	}
+	99%{
+		opacity: 0;
+		position: absolute;
+		top: .4rem;
+		right: 1.8rem;
+	}
+	100%{
+		opacity: 1;
+		position: absolute;
+		top: .4rem;
+		right: 1.8rem;
+	}
+}
+.animateTimeName{
+	animation:moveTwoName 5s;
+}
+@keyframes moveTwoName{
+	0%{
+		opacity: 0;
+		position: absolute;
+		right: 0rem;
+		top: 6.95rem;
+	}
+	35%{
+		opacity: 0;
+		right: 0rem;
+		top: 6.95rem;
+		font-size: .32rem;
+	}
+	45%{
+		opacity: 1;
+		right: .8rem;
+		top: 6.95rem;
+		font-size: .32rem;
+	}
+	55%{
+		opacity: 1;
+		right: .8rem;
+		top: 6.95rem;
+		font-size: .32rem;
+	}
+	65%{
+		opacity: 1;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .5rem;
+	}
+	75%{
+		opacity: 1;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	95%{
+		opacity: 1;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	96%{
+		opacity: 0;
+		right: .5rem;
+		top: 6.95rem;
+		font-size: .44rem;
+	}
+	99%{
+		opacity: 0;
+		top: .44rem;
+		right: .35rem;
+	}
+	100%{
+		opacity: 1;
+		top: .44rem;
+		right: .35rem;
+	}
+	
+}
+.stopAnimate{
+	animation: stop;
+}
+.apple_p{
+	/*position: absolute;
+	bottom: 0;*/
+	margin-top: .45rem;
+}
+.yt_apple_header{
+	font-size: .4rem;
+	color:#FFFF00  ;
+}
+.yt_apple_children{
+	text-align: left;
+	/*padding: .34rem .4rem 1.33rem .4rem;*/
+	font-size: .24rem;
+	color: #D1E4F5 ;
+	line-height: .34rem;
+	/*padding: .34rem .4rem 1rem .4rem;*/
+	padding: .34rem .4rem 0.2rem .4rem;;
+	/*height: 2.5rem;*/
+	/*height: 2rem;*/
+	height: 1.8rem;
+	overflow: hidden;
+}
+.first-position{
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
+.allContent{
+	width: 100%;
+	overflow: hidden;
+	/*display: none;*/
+}
+.tree-img-grand{
+	width: 4.85rem;
+	height: 4.24rem;
+	margin: 2.9rem auto auto auto;
+	position: relative;
+}
+.tree-img-father{
+	width: 4.85rem;
+	height: 4.24rem;
+	animation: tree_img .5s;
+	position: absolute;
+	overflow: hidden;
+	bottom: 0;
+	animation-delay: 9s;
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode:both;
+}
+.tree-img-father-two{
+	animation-delay: 6s;
+}
+@keyframes tree_img{
+	from{
+		height: 0;
+	}
+	to{
+		height: 4.24rem;
+	}
+}
+.tree-img{
+	
+	display: block;
+	width: 4.85rem;
+	height: 4.24rem;
+	position: absolute;
+	bottom: 0;
+}
+.apple-background{
+	width: 1.81rem;
+	height: 1.81rem;
+	border-radius: 50%;
+	background: url('../img/one_bg_point.png') no-repeat;
+	background-size: contain;
+	position: relative;
+	margin:-.43rem auto auto auto;
+}
+.apple-background img{
+	width: 1.45rem;
+	height: 1.45rem;
+	display: block;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.apple-list{
+	width: 100%;
+	padding-left: 1.26rem;
+	overflow: hidden;
+	position: absolute;
+	top: 5.18rem;
+	left: 0rem;
+}
+.apple-list div{
+	float: left;
+	width: .28rem;
+	font-size: .28rem;
+	color: #FFFF00;
+	line-height: .32rem;
+	overflow: hidden;
+}
+.apple-list-two{
+	margin: 0 .77rem 0 .97rem;
+}
+.apple-list-thr{
+	margin: 0  1.23rem 0 0;
+}
+
+.apple-list-children{
+	font-size: .2rem;
+	/*position: absolute;
+	top: 2rem;
+	left: .82rem;*/
+	width: 100%;
+	height: 3rem;
+	position: absolute;
+	top: 2.2rem;
+	top: 1.2rem;
+	color: white;
+}
+.apple-list-children div{
+	float: left;
+}
+.apple-list-children p{
+	text-align: center;
+	font-size: .2rem;
+	line-height: .24rem;
+	overflow: hidden;
+}
+.apple-list-children img{
+	display: block;
+	margin: auto;
+}
+.a-l-c-1{
+	width: 1.2rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: -0.12rem;
+	left: .8rem;
+	
+}
+.a-l-c-1 p{
+	font-size: .28rem;
+	line-height: .32rem;
+}
+.a-l-c-2{
+	width: 1rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: -0.3rem;
+	left: 2.14rem;
+}
+.a-l-c-3{
+	width: 1.2rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0.5rem;
+	left: 2.45rem;
+}
+.a-l-c-4{
+	width: 1.2rem;
+	overflow: hidden;
+	position: absolute;
+	left: 3.1rem;
+	bottom:1.15rem ;
+	
+}
+.a-l-c-5{
+	width: .7rem;
+	overflow: hidden;
+	position: absolute;
+	right: 2.62rem;
+	bottom: .53rem;
+}
+.a-l-c-6{
+	width: 1rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: .78rem;
+	right: 1.78rem;
+}
+.a-l-c-7{
+	width: 1rem;
+	overflow: hidden;
+	position: absolute;
+	bottom: .31rem;
+	right: .91rem;
+}
+
+.a-l-c-1 img{
+	width: 1.12rem;
+	height: 1.12rem;
+}
+
+.a-l-c-2 img{
+	width: .26rem;
+	height: .26rem;
+}
+.a-l-c-3 img{
+	width: .36rem;
+	height: .36rem;
+}
+.a-l-c-4 img{
+	width: .87rem;
+	height: .87rem;
+}
+.a-l-c-5 img{
+	width: .26rem;
+	height: .26rem;
+}
+.a-l-c-6 img{
+	width: .73rem;
+	height: .73rem;
+}
+.a-l-c-7 img{
+	width: .73rem;
+	height: .73rem;
+}
+.html-header-left{
+	position: relative;
+	float: left;
+}
+.html-header-right{
+	float: right;
+}
+.html-header-right-1{
+	font-size: .24rem;
+	line-height: .48rem;
+	text-align: center;
+	float: right;
+	margin: 0 .1rem 0 0;
+	width: 1.4rem;
+	height: .48rem;
+	border-radius: .24rem;
+	color: #782F13 ;
+	opacity:1;
+	background: rgba(255,255,255,1);
+	position: relative;
+	z-index: 999;
+}
+.right-margin{
+	margin-right: .2rem;
+}
+.yy-color{
+	position: relative;
+	z-index: 999;
+	opacity:1;
+	background: white;
+}
+.administration{
+	width: 100%;
+	margin-top: .72rem;
+	position: relative;
+	overflow: hidden;
+}
+.administration-children{
+	width: 1.4rem;
+	font-size: .32rem;
+	line-height: .36rem;
+	height: .32rem;
+	/*border-radius: .35rem;*/
+	color: #782F13 ;
+	/*background: #FFFF00 ;*/
+	opacity:1;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: -.1rem;
+	margin: auto;
+}
+.administrationAnimation{
+	animation: administrationPadding .5s  ;
+	opacity:1;
+	animation-delay: 1.3s;
+    -webkit-animation-delay: 1.3s;
+}
+.administration-children-img{
+	/*写了animate的class=ani就不用写下面的了*/
+	visibility: visible;
+	/*继承前后的属性，前指的是visibility: visible;后指的是动画100%的属性*/
+	animation-fill-mode: both;
+	-webkit-animation-fill-mode:both;
+	width: 4.12rem;
+	height: 0.82rem;
+	display: block;
+	margin: auto;
+	
+}
+@keyframes administrationPadding{
+	from{
+		width: 0;
+		margin-right: auto auto auto 0;
+	}
+	to{
+		width: 4.12rem;
+		/*margin-right:auto auto auto 2.06rem;*/
+	}
+}
+.line-img{
+	width: 100%;
+	height: 7.85rem;
+	position: relative;
+}
+.line-img-img{
+	position: relative;
+	width: 6.14rem;
+	
+	margin: auto;
+	display: block;
+}
+.lastqiu{
+	display: block;
+	width: .65rem;
+	height: .65rem;
+	background: url('../img/three_bg_imp.png') no-repeat;
+	background-size: contain;
+	position: absolute;
+	bottom: -0.32rem;
+	left:3.43rem;
+	z-index: 123;
+}
+.tj-message{
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 3.68rem;
+	
+}
+.tj-message-1{
+	width: 6.8rem;
+	overflow: hidden;
+	margin: auto auto .54rem auto;
+}
+.tj-message-1-1{
+	width: 4.42rem;
+	overflow: hidden;
+	float: left;
+}
+.tj-message-1-1 div{
+	font-size: .28rem;
+	line-height: .32rem;
+	height: .3rem;
+	color: white;
+	margin: .12rem 0 .17rem 0;
+	text-align: right;
+}
+.tj-message-1-1 div span{
+	padding-left: .1rem;
+}
+.tj-message-1-1 p{
+	text-align: right;
+	color: #D1E4F5 ;
+}
+.tj-message-1-1 .tj-message-right-p{
+	text-align: left;
+}
+.tj-message-1-1{
+	font-size: .2rem;
+	line-height: .28rem;
+}
+.tj-message-1-1 .twoName{
+	text-align: left;
+}
+.tj-message-1-img{
+	width: 1.6rem;
+	height: 1.6rem;
+	display:block;
+	float: left;
+	margin: 0 0 0 .2rem;
+	border-radius: 50%;
+}
+.tj-message-1-radius{
+	width: .7rem;
+	height: .7rem;
+	background: url('../img/three_img_bgbgbg.png') no-repeat;
+	background-size: contain;
+	color: #782F13 ;
+	line-height: .72rem;
+	font-size: .32rem;
+	float: left;
+	margin: .44rem 0 0 -0.2rem;
+}
+.tj-message-right-radius{
+	margin: .44rem -0.2rem 0 0rem;
+	z-index: 9;
+	position: relative;
+}
+.tj-message-right-img{
+	margin: 0 .2rem 0 0rem;
+}
+/*因为动态生成后再去new那个swiper,没用，先这样用着*/
+.animated_ajax_0{
+	visibility: visible;
+    animation-duration: .5s;
+    -webkit-animation-duration: .5s;
+    animation-delay: 2.8s;
+    -webkit-animation-delay: 2.8s;
+	animation-name: rotateInUpLeft;
+	animation-fill-mode: both;
+	
+}
+.animated_ajax_1{
+	visibility: visible;
+    animation-duration: .5s;
+    -webkit-animation-duration: .5s;
+    animation-delay: 3.2s;
+    -webkit-animation-delay: 3.2s;
+	animation-name: rotateInUpRight;
+	animation-fill-mode: both;
+}
+.animated_ajax_2{
+	visibility: visible;
+    animation-duration: .5s;
+    -webkit-animation-duration: .5s;
+    animation-delay: 3.7s;
+    -webkit-animation-delay: 3.7s;
+	animation-name: zoomIn;
+	animation-fill-mode: both;
+}

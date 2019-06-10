@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--禁止缩放-->
+    <meta id="viewport" name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <!--去除默认的数字拨号链接-->
+    <meta content="telephone=no" name="format-detection">
+    <!--开启浏览器对webapp的支持-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>烟台重要产品追溯信息查询</title>
+    <script src="js/auto-size.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/slide2.css">
+</head>
+
+<body>
+    <!-- loading -->
+    <div class="loading">
+        <div class="loading_wraper">
+            <div>
+                <img src="img/loadin_icon_icon.png">
+            </div>
+            <h5>加载中</h5>
+            <p id="loading_num">0%</p>
+        </div>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <!-- 第一页 -->
+            <div class="swiper-slide first">
+                <div id='dy_img' class="dy_img "></div>
+                <div id='dy_name' class="dy_name dy_name_size">山东·烟台</div>
+                <div class="banckground_blue ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.1s" swiper-animate-delay="7.5s"></div>
+                <div class="upload ">
+                    <div class="html-header ani">
+                        <div class="header-top ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">基础信息</div>
+                        <div class="heaer-down ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s" swiper-animate-delay="8s"></div>
+                    </div>
+                    <!--bounceInUp ,fadeInUp-->
+                    <div class="first-position">
+                        <div class="allContent">
+                            <div class="apple-list">
+                                <div class="apple-list-first ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="8s">企业信息</div>
+                                <div class="apple-list-two ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="8s">基地信息</div>
+                                <div class="apple-list-thr ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="8s">采收时间</div>
+                                <div class="apple-list-four ani" swiper-animate-effect="fadeIn" swiper-animate-duration="2s" swiper-animate-delay="8s">检测信息</div>
+                            </div>
+                            <div class="apple-list-children">
+                                <div class="a-l-c-1">
+                                    <p class="ani" id='nodename' swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s"></p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                                <div class="a-l-c-2">
+                                    <p class="ani" id='baseName' swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">空</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                                <!--<div class="a-l-c-3">
+                                    <p id='plantDate' class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">空</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>-->
+                                <div class="a-l-c-4">
+                                    <p id='inDate' class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">空</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                                <div class="a-l-c-5">
+                                    <p id='pesticide' class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">15%</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                                <div class="a-l-c-6">
+                                    <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">抑制率</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                                <div class="a-l-c-7">
+                                    <p class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s">合格</p>
+                                    <img class="ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.5s" swiper-animate-delay="8s" src="img/one_bg_point_m.png" alt="" />
+                                </div>
+                            </div>
+                            <!--这里外面多写了一层，如果去掉很多东西要去重新定位-->
+                            <div class="tree-img-grand">
+                            	<div id='tree_img_father' class="tree-img-father ani">
+	                            	<img class="tree-img "  src="img/one_line_none.png" alt="" />
+                            	</div>
+                            </div>
+                            <div class="apple-background ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="8s" alt="">
+                                <img class="ani" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="8s" src="img/apple(1).png" alt="" />
+                            </div>
+                        </div>
+                        <div class="ani apple_p" swiper-animate-effect="bounceInUp" swiper-animate-duration="2s" swiper-animate-delay="8s">
+                            <p id='goodsName' class="yt_apple_header">烟台苹果 — 红富士</p>
+                            <!--<p class="yt_apple_children">
+                                烟台苹果以其色泽鲜艳、清脆香甜而闻名于世，历来为国内外市场所喜欢。果汁含量在89%以上，糖份含量高，总糖量16.4%，含有铁、锌、锰、钙等人体有益的微量元素。
+                            </p>-->
+                            <p class="yt_apple_children">
+                                烟台苹果以其色泽鲜艳、清脆香甜而闻名于世，历来为国内外市场所喜欢。果汁含量在89%以上，糖份含量高，总糖量16.4%，含有铁、锌、锰、钙等人体有益的微量元素，氨基酸含量较高。经常食用，可起到帮助消化、养颜润肤的独特作用。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="icon_up" data-transition="slideup"></div>
+            </div>
+            <!-- 第二页 -->
+            <div class="swiper-slide slide-page2">
+                <div class="banckground_blue ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.4s"></div>
+                <div class="page-name-title ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.6s">生长环境</div>
+                <div class="slide-page-wraper">
+                    <div class="banner-container ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" id="jdimg"><img src="img/suimitao.png" height="100%"></div>
+                        </div>
+                        <div class="banner-pagination"></div>
+                    </div>
+                    <div class="farm-climate ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <ul class="bfc" id="farmClimateView"></ul>
+                        <script type="text/html" id="farmClimateTpl">
+                            <li class="ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                                <div class="climate-img">
+                                    <img src="img/two_icon_wendu.png">
+                                </div>
+                                <p id="climate-text">年平均温度</p>
+                                <p>截止2017年10月</p>
+                            </li>
+                            <li class="ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.2s">
+                                <div class="climate-data">{{ d.f_ave_temperature}} ℃</div>
+                                <div class="climate-type">
+                                    <div class="active">
+                                        <img src="img/two_img_wendu.png" style="width: 0.44rem">
+                                        <p>年平均温度</p>
+                                    </div>
+                                    <div>
+                                        <img src="img/two_img_haiba.png" style="width: 0.37rem">
+                                        <p>海拔</p>
+                                    </div>
+                                    <div>
+                                        <img src="img/two_img_jiangshui.png" style="width: 0.48rem">
+                                        <p>年平均降水量</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </script>
+                    </div>
+                    <!-- 基地信息 -->
+                    <ul class="baseinfo ani" id="baseinfoView" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="1.4s"></ul>
+                    <script type="text/html" id="baseinfoTpl">
+                        <li>
+                            <span>基地名称</span>
+                            <span><img src="img/two_icon_mianji.png"></span>
+                            <span>{{d.f_base_name}}</span>
+                        </li>
+                        <li>
+                            <span>面积（亩）</span>
+                            <span><img src="img/two_icon_name.png"></span>
+                            <span>{{d.f_total_acreage}}</span>
+                        </li>
+                        <li>
+                            <span>负责人</span>
+                            <span><img src="img/two_icon_user.png"></span>
+                            <span>{{d.f_charge_person}}</span>
+                        </li>
+                        <li>
+                            <p>{{d.f_description}}</p>
+                        </li>
+                    </script>
+                    <div class="icon_up"></div>
+                </div>
+            </div>
+            <!-- 第三页 -->
+            <div class="swiper-slide thr">
+                <div class="banckground_blue"></div>
+                <div class="html-header ani">
+                    <div class="html-header-left">
+                        <div class="header-top ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">农事记录</div>
+                        <div class="heaer-down ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+                    </div>
+                    <div class="html-header-right">
+                        <div onclick="thrBtn(this)" class="html-header-right-1  right-margin ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="2.5s" swiper-animate-delay="0s">用药管理</div>
+                        <div onclick="thrBtn(this)" class="html-header-right-1 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">施肥管理</div>
+                        <div onclick="thrBtn(this)" class="html-header-right-1 yy-color ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">田间管理</div>
+                        <!--<div id='yygl' onclick="thrBtn(this,'用药')" class="html-header-right-1  right-margin ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="2.5s" swiper-animate-delay="0s" >用药管理</div>
+                            <div id='sfgl' onclick="thrBtn(this,'施肥')" class="html-header-right-1 ani"  swiper-animate-effect="bounceInRight" swiper-animate-duration="2s" swiper-animate-delay="0s">施肥管理</div>
+                            <div id='tjgl' onclick="thrBtn(this,'田间')" class="html-header-right-1 yy-color ani"  swiper-animate-effect="bounceInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s">田间管理</div>-->
+                    </div>
+                </div>
+                <div class="administration ">
+                    <img class="administration-children-img ani" src="img/three_botton_bg.png" alt="" />
+                    <div id='headerTj' class="administration-children ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="1.8s">
+                        	田间管理
+                    </div>
+                </div>
+                <div class="line-img">
+                    <img src="img/three_line.png" class="line-img-img ani" alt="" swiper-animate-effect="rollIn" swiper-animate-duration="0.5s" swiper-animate-delay="2.3s"/>
+                	<span class="lastqiu ani" swiper-animate-effect="fadeInDownBig" swiper-animate-duration=".8s" swiper-animate-delay="3.8s"></span>
+                </div>
+                <div class="tj-message" id='tj-message'>
+                    <div id='is_show_0' class="tj-message-1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <div class="tj-message-1-1 ani">
+                            <div><span id='farm_type_name_0'></span> <span id='f_indate_0'></span></div>
+                            <p>
+                                <!--操作类型：<span id='farm_type_name_0'></span>；-->
+                              	 操作人：<span id='f_operator_0'></span>；
+                              	投入品名称：<span id='f_inputs_name_0'></span>；
+                                <!--投入品厂家：<span id='f_inputs_manufactor_0'></span>；-->
+                                <!--投入品规格：<span id='f_inputs_standard_0'></span>；-->
+                               	用量：<span id='f_mu_usage_0'></span>； 
+                              	 使用方式：<span id='f_usage_method_0' ></span>。
+                            </p>
+                        </div>
+                        <img id='tjImg_0' class="tj-message-1-img ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s" src="img/apple(1).png" alt="" />
+                        <div class="tj-message-1-radius ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                            1
+                        </div>
+                    </div>
+                    <div id='is_show_1' class="tj-message-1 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.2s">
+                        <div swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s" class="tj-message-1-radius ani tj-message-right-radius">
+                            2
+                        </div>
+                        <img id='tjImg_1' swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s" class="tj-message-1-img ani tj-message-right-img" src="img/apple(1).png" alt="" />
+                        <div swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s" class="tj-message-1-1 ani">
+                            <div class="twoName"><span id='farm_type_name_1'></span> <span id='f_indate_1'></span></div>
+                            <p class="tj-message-right-p">
+                               	 操作人：<span id='f_operator_1'></span>；
+                               	 投入品名称：<span id='f_inputs_name_1'></span>；
+                                <!--投入品厂家：<span id='f_inputs_manufactor_1'></span>；-->
+                                <!--投入品规格：<span id='f_inputs_standard_1'></span>；-->
+                               	 用量：<span id='f_mu_usage_1'></span>；
+                               	 使用方式：<span id='f_usage_method_1'></span>。
+                            </p>
+                        </div>
+                    </div>
+                    <div id='is_show_2' class="tj-message-1 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+                        <div class="tj-message-1-1 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                            <div><span id='farm_type_name_2'></span> <span id='f_indate_2'></span></div>
+                            <p>
+                              	  操作人：<span id='f_operator_2'></span>； 
+                              	  投入品名称：<span id='f_inputs_name_2'></span>；
+                                <!--投入品厂家：<span id='f_inputs_manufactor_2'></span>；-->
+                                <!--投入品规格：<span id='f_inputs_standard_2'></span>；-->
+                            	 用量：<span id='f_mu_usage_2'></span>； 
+                            	 使用方式：<span id='f_usage_method_2'></span>。
+                            </p>
+                        </div>
+                        <img id='tjImg_2' src="img/apple(1).png" class="tj-message-1-img ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s" alt="" />
+                        <div class="tj-message-1-radius ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                            3
+                        </div>
+                    </div>
+                </div>
+                <div class="icon_up"></div>
+            </div>
+            <!-- 第四页 -->
+            <div class="swiper-slide slide-page4">
+                <div class="banckground_blue"></div>
+                <div class="page-name-title ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0s">流通信息</div>
+                <div class="slide-page-wraper">
+                    <div class="title-bg ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.4s" id="ltxxgoodsName">红富士</div>
+                    <div class="content">
+                        <div class="yellow_line ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.6s"><span></span></div>
+                        <ul class="salerecord-list" id="salerecordView"></ul>
+                        <script type="text/html" id="salerecordTpl">
+                            <li>
+                                <span class="yellow_spot ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="1s"></span>
+                                <div class="text ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="1.4s">
+                                    <p>{{d.wsSupplierName}}</p>
+                                    <!-- <p class="span">商品名称：{{d.goodsName}}</p> -->
+                                    <p>采收时间</p>
+                                    <p class="span">{{d.jcindate}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="yellow_spot ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="1.8s"></span>
+                                <div class="text ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="2.2s">
+                                    <p>批次号</p>
+                                    <p class="span">{{d.batchId}}</p>
+                                    <p>交易凭证号</p>
+                                    <p class="span">{{d.transId}}</p>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="yellow_spot ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="2.6s"></span>
+                                <div class="text ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="3s">
+                                    <p>{{d.salermarketName}}</p>
+                                    <p>进场日期</p>
+                                    <p class="span">{{d.indate}}</p>
+                                </div>
+                            </li>
+                        </script>
+                    </div>
+                </div>
+                <div class="icon_up"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <!-- <script type="text/javascript" src="js/zepto.min.js"></script> -->
+    <script src="js/swiper-3.4.2.jquery.min.js"></script>
+    <script src="js/swiper.animate1.0.2.min.js"></script>
+    <script src="js/laytpl.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        // 初始化第二页banner
+        var swiper = new Swiper('.banner-container', {
+            pagination: '.banner-pagination',
+            paginationClickable: true
+        });
+        // 获取所有数据
+        getAllDataList();
+        // loading 百分数进度
+        loading_num();
+    })
+    // loading 百分数进度
+    function loading_num() {
+        var loading_num = 0;
+        var timer = setInterval(function() {
+            if (loading_num >= 100) {
+                clearInterval(timer);
+                loading_num = 100;
+                setTimeout(function(){
+                    $('.loading').fadeOut(500);
+                },1000)
+            } else {
+                loading_num++;
+            }
+            $('#loading_num').html(loading_num + '%');
+        }, 20)
+    }
+    // 获取数据
+    function getAllDataList() {
+        getDataList(API_URL + 'importantGood/queryInfoByTranId', {
+            tranId: tranId
+        }, function(d) {
+            if (d && d.state === 0) {
+                console.log(d.aaData)
+                // 气候数据
+                renderFarmClimate(d.aaData.ncqh[0]);
+                // 基地信息
+                renderBaseInfo(d.aaData.ncqh[0]);
+                // 销售记录
+                renderXsjlList(d.aaData.ltxx);
+            }
+        })
+    }
+    // 渲染生长环境
+    function renderFarmClimate(data) {
+        var view = $("#farmClimateView");
+        var tpl = $("#farmClimateTpl").html();
+        $('.climate-data').html(data.f_ave_temperature + '℃')
+        laytpl(tpl).render(data, function(html) {
+            view.html(html);
+            var count = 0;
+            var eles = $('.climate-type').children('div');
+            var imgs = ['img/two_icon_wendu.png', 'img/two_icon_haiba.png', 'img/four_icon_jiangshui.png'];
+            var texts = ['年平均温度', '海拔', '年平均降水量'];
+
+            var datas = [data.f_ave_temperature + '℃', data.f_altitude + 'm', data.f_precipitation + 'ml']
+            setInterval(function() {
+                count++;
+                if (count >= eles.length) {
+                    count = 0;
+                }
+                // 选择样式
+                eles.eq(count).addClass('active').siblings('').removeClass('active');
+                // 图片
+                $('.climate-img>img').attr('src', imgs[count]);
+                // 数据
+                $('.climate-data').html(datas[count]);
+                // 文字
+                $('#climate-text').html(texts[count]);
+            }, 2500)
+        });
+    }
+    // 渲染基地信息
+    function renderBaseInfo(data) {
+        var imgsrc = 'http://www.ytltzs.cn/' + data.f_image_url;
+        $("#jdimg>img").attr('src', imgsrc)
+        var view = $("#baseinfoView");
+        var tpl = $("#baseinfoTpl").html();
+        laytpl(tpl).render(data, function(html) {
+            view.html(html);
+        });
+    }
+    // 渲染第四页销售记录
+    function renderXsjlList(data) {
+        for (var i in data[1].two) {
+            // 进场重量
+            if (i == 'weight') {
+                data[0].one.jcweight = data[1].two[i]
+            }
+            // 进场日期
+            if (i == 'indate') {
+                data[0].one.jcindate = data[1].two[i]
+            }
+        }
+        var view = $("#salerecordView");
+        var tpl = $("#salerecordTpl").html();
+        laytpl(tpl).render(data[0].one, function(html) {
+            $('#ltxxgoodsName').html(data[0].one.goodsName)
+            // 动态设置li的高度平均布局
+            view.html(html);
+            var height = 6 / view.children().length;
+            view.children().css({
+                height: height + 'rem',
+            });
+        });
+    }
+    </script>
+</body>
+
+</html>

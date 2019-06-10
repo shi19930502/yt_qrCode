@@ -1,0 +1,503 @@
+@charset "UTF-8";
+ul.bfc {
+  overflow: hidden;
+}
+
+ul.bfc li {
+  float: left;
+}
+
+body, html {
+  height: 100%;
+}
+
+/*初始化加载页面*/
+.loading {
+  background: #e5edf3;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 999999999999;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.error_data {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999999;
+  background: white;
+}
+
+.error_position {
+  width: 100%;
+  height: 4.55rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.error_position div {
+  margin: auto;
+  text-align: center;
+}
+
+.error_img {
+  width: 2.9rem;
+  height: 2.9rem;
+  background: url("../imgs/error_img.png") no-repeat;
+  background-size: cover;
+}
+
+.error_data_fail {
+  font-size: .48rem;
+  line-height: .7rem;
+  height: .7rem;
+  padding-bottom: .2rem;
+  color: #3A3D43;
+}
+
+.erroe_list {
+  font-size: .28rem;
+  line-height: .3rem;
+  height: .3rem;
+  color: #818388;
+}
+
+.loading_wraper {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loading_wraper img {
+  width: 1.5rem;
+  -webkit-animation: rotateLogo infinite 2s linear;
+          animation: rotateLogo infinite 2s linear;
+  /** 匀速 循环**/
+}
+
+.loading_wraper h5 {
+  font-size: 0.24rem;
+  color: #818388;
+  padding: 0.3rem 0;
+}
+
+.loading_wraper p {
+  font-size: 0.36rem;
+  color: #3A3D43;
+}
+
+@-webkit-keyframes rotateLogo {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateLogo {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*页面头部*/
+.page-name-title {
+  width: 2.37rem;
+  position: absolute;
+  background: url("../imgs/one_bg_name.png") no-repeat bottom;
+  background-size: 100%;
+  color: #fff;
+  font-size: 0.32rem;
+  height: 0.63rem;
+  text-align: left;
+  padding-left: 0.25rem;
+  top: 0.4rem;
+  left: 0;
+  z-index: 10;
+}
+
+/*页面容器主要是区分和蓝色背景层级关系*/
+.slide-page-wraper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/*翻页图标*/
+.icon_up {
+  width: 0.62rem;
+  height: 0.31rem;
+  background: url("../imgs/one_icon_up.png");
+  background-size: 100%;
+  position: absolute;
+  left: 50%;
+  margin-left: -0.31rem;
+  bottom: 0.02rem;
+  -webkit-animation: uobtnAni infinite 2s linear;
+          animation: uobtnAni infinite 2s linear;
+  /** 匀速 循环**/
+}
+
+.icon_down {
+  -webkit-animation: last infinite 1s linear;
+          animation: last infinite 1s linear;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  background: url("../imgs/one_icon_down.png");
+  background-size: 100%;
+}
+
+@-webkit-keyframes last {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -0.1rem);
+            transform: translate(0px, -0.1rem);
+  }
+}
+
+@keyframes last {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -0.1rem);
+            transform: translate(0px, -0.1rem);
+  }
+}
+
+@-webkit-keyframes uobtnAni {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -0.1rem);
+            transform: translate(0px, -0.1rem);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes uobtnAni {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -0.1rem);
+            transform: translate(0px, -0.1rem);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+/*第二页样式表*/
+.slide-page2 {
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/two_line.png") center;
+  background-size: cover;
+}
+
+.slide-page2 .banner-container {
+  width: 100%;
+  height: 3.84rem;
+  position: relative;
+}
+
+.slide-page2 .banner-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide-page2 .banner-container .banner-pagination {
+  position: absolute;
+  z-index: 1;
+  bottom: 0.05rem;
+}
+
+.slide-page2 .banner-container .swiper-pagination-bullet {
+  width: 0.12rem;
+  height: 0.12rem;
+  background: #fff;
+}
+
+/*农场气候*/
+.farm-climate {
+  width: 100%;
+  height: 3rem;
+  border-bottom: 1px solid #fff;
+}
+
+.farm-climate ul {
+  height: 100%;
+}
+
+.farm-climate ul li:nth-child(1) {
+  width: 40%;
+  height: 100%;
+}
+
+.farm-climate ul li:nth-child(1) .climate-img {
+  width: 1.36rem;
+  height: 1.3rem;
+  border-radius: 100%;
+  margin: 0.3rem 0;
+  margin-left: 0.2rem;
+}
+
+.farm-climate ul li:nth-child(1) .climate-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.farm-climate ul li:nth-child(1) p {
+  font-size: 0.24rem;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 0.2rem;
+  padding-left: 0.3rem;
+}
+
+.farm-climate ul li:nth-child(2) {
+  width: 60%;
+  height: 100%;
+  position: relative;
+}
+
+.farm-climate ul li:nth-child(2) .climate-data {
+  margin-top: 0.4rem;
+  font-size: 0.98rem;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.farm-climate ul li:nth-child(2) .climate-type {
+  overflow: hidden;
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  bottom: 0.15rem;
+}
+
+.farm-climate ul li:nth-child(2) .climate-type div {
+  padding-top: 0.04rem;
+  float: left;
+  width: 33%;
+  background: rgba(255, 255, 255, 0.4);
+  color: #FFFF00;
+  font-size: 0.20rem;
+  height: 100%;
+  margin-right: 0.01rem;
+  /*transition: all 0.5s;*/
+}
+
+.farm-climate ul li:nth-child(2) .climate-type div img {
+  margin: 0.1rem 0;
+}
+
+.farm-climate ul li:nth-child(2) .climate-type div.active {
+  border-top: 0.04rem solid #FFFF00;
+  padding-top: 0;
+}
+
+.farm-climate ul li:nth-child(2) .climate-type div:last-child {
+  margin-right: 0;
+}
+
+/*基地信息*/
+.baseinfo {
+  width: 100%;
+  font-size: 0.28rem;
+  color: #fff;
+  text-align: left;
+  padding-top: 0.3rem;
+}
+
+.baseinfo li {
+  /*width: 100%;*/
+  padding: 0.15rem 0.6rem;
+}
+
+.baseinfo li span {
+  display: inline-block;
+  width: 32%;
+}
+
+.baseinfo li p {
+  line-height: 0.35rem;
+  color: #D1E4F5;
+}
+
+.baseinfo li span:nth-child(2) {
+  text-align: center;
+}
+
+.baseinfo li span:nth-child(2) img {
+  width: 0.29rem;
+}
+
+.baseinfo li span:nth-child(3) {
+  text-align: right;
+}
+
+/*第四页样式表*/
+.slide-page4 {
+  width: 100%;
+  height: 100%;
+  background: url("../imgs/one_bg_weixing.png") center;
+  background-size: cover;
+}
+
+.slide-page4 .title-bg {
+  width: 4.11rem;
+  height: 0.82rem;
+  line-height: 0.7rem;
+  background: url("../imgs/three_botton_bg.png");
+  background-size: 100%;
+  margin: 0 auto;
+  font-size: 0.32rem;
+  color: #782F13;
+  margin-top: 1.69rem;
+  font-weight: 600;
+}
+
+.slide-page4 .content {
+  position: relative;
+}
+
+.slide-page4 .content .yellow_line {
+  width: 0.04rem;
+  height: 7rem;
+  background: #FFFF00;
+  position: absolute;
+  top: -0.05rem;
+  left: 50%;
+  margin-left: -0.02rem;
+}
+
+.slide-page4 .content .yellow_line span {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: url("../imgs/three_bg_imp.png");
+  background-size: 100%;
+  position: absolute;
+  bottom: -0.5rem;
+  left: -0.3rem;
+}
+
+.salerecord-list {
+  font-size: 0.28rem;
+  color: #fff;
+}
+
+.salerecord-list li {
+  height: 2rem;
+  text-align: left;
+  position: relative;
+}
+
+/*小黄原点*/
+.salerecord-list li .yellow_spot {
+  display: inline-block;
+  width: 0.44rem;
+  height: 0.44rem;
+  background: url("../imgs/three_img_bgbgbg.png");
+  background-size: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.22rem;
+  margin-top: -0.22rem;
+}
+
+.salerecord-list li .text {
+  position: absolute;
+  width: 3rem;
+  left: 55%;
+  top: 30%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/*偶数行文字位置*/
+.salerecord-list li:nth-child(even) .text {
+  text-align: right;
+  left: 5.5%;
+}
+
+.salerecord-list li .text p {
+  margin-bottom: 0.1rem;
+  /*width: 3rem;*/
+  /*font-size: 0.2rem;*/
+}
+
+.salerecord-list li .text .span {
+  font-size: 0.2rem;
+  color: #D1E4F5;
+  margin-bottom: 0.1rem;
+}
+
+.salerecord-list li.right {
+  font-size: 0.28rem;
+  color: #fff;
+}
+
+/*@media screen and (max-height: 600px) {
+    .farm-climate ul li:nth-child(2) .climate-type {
+        height: 1.3rem;
+    }
+    .baseinfo{
+        padding-top: 0.1rem;
+    }
+    .baseinfo li{
+        padding: 0.1rem 0.3rem;
+    }
+    .baseinfo li p{
+        line-height: 0.3rem;
+        font-size: 0.22rem;
+    }
+
+    .slide-page4 .content .yellow_line {
+        width: 0.04rem;
+        height: 9rem;
+        background: #FFFF00;
+        position: absolute;
+        top: -0.05rem;
+        left: 50%;
+        margin-left: -0.02rem;
+    }
+}*/
+
+/*# sourceMappingURL=slide2.css.map */

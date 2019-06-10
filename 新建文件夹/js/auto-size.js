@@ -1,0 +1,1 @@
+"use strict";!function(e,n){function t(){var e=window.innerWidth;n.documentElement.style.fontSize=e/750*100+"px"}var i="onorientationchange"in e?"orientationchange":"resize",o=null;e.addEventListener(i,function(){clearTimeout(o),o=setTimeout(t,300)},!1),e.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(o),o=setTimeout(t,300))},!1),t()}(window,document);
